@@ -1,0 +1,201 @@
+:root {
+  font-family: "Space Grotesk", "Inter", "Segoe UI", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  color: #e2e8f0;
+  --shark-950: #010711;
+  --shark-900: #031126;
+  --shark-800: #0b1c33;
+  --shark-700: #15263d;
+  --shark-600: #334766;
+  --burnt-orange: #ff6b35;
+  --burnt-orange-hover: #ff834d;
+}
+
+html,
+body {
+  background: #010711;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 340px;
+  color: inherit;
+}
+
+.popup {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: linear-gradient(145deg, #070f23, #0b1932);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.popup__hero {
+  position: relative;
+  padding: 18px;
+  border-radius: 20px;
+  background: radial-gradient(circle at 30% 30%, rgba(76, 188, 255, 0.25), transparent),
+    rgba(4, 13, 29, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup__heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.popup__eyebrow {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.popup__title {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #f8fafc;
+}
+
+.popup__tagline {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.popup__heroBg {
+  position: absolute;
+  inset: -40px -40px -60px -40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.popup__heroBg img {
+  width: 220px;
+  height: auto;
+  opacity: 0.35;
+  transform: translate(10px, -25px) rotate(-6deg);
+  filter: drop-shadow(0 35px 45px rgba(0, 0, 0, 0.45));
+}
+
+.popup__heroBg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0, 34, 102, 0.6), rgba(255, 107, 53, 0.25));
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+.popup__card {
+  background: rgba(3, 17, 38, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.popup__select {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8fafc;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.popup__select:hover,
+.popup__select:focus-visible {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.popup__select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.popup__status {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #4ade80;
+  min-height: 18px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(6, 31, 18, 0.85);
+  border: 1px dashed rgba(74, 222, 128, 0.35);
+}
+
+.popup__status[data-state="working"] {
+  color: #7dd3fc;
+  border-color: rgba(125, 211, 252, 0.4);
+}
+
+.popup__status[data-state="success"] {
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.4);
+}
+
+.popup__status[data-state="error"] {
+  color: #fca5a5;
+  border-color: rgba(252, 165, 165, 0.4);
+}
+
+.popup__button {
+  border: none;
+  background: linear-gradient(120deg, var(--burnt-orange), #ff9635);
+  color: #0b1220;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.35);
+}
+
+.popup__button:not(:disabled):hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 32px rgba(255, 107, 53, 0.45);
+  background: linear-gradient(120deg, var(--burnt-orange-hover), #ffb347);
+}
+
+.popup__button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}

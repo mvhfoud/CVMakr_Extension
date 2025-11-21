@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CVMakr Job Scraper</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup__hero">
+        <div class="popup__heroBg" aria-hidden="true">
+          <img src="../assets/cvmakr-logo-128.png" alt="" />
+        </div>
+        <div class="popup__heroText">
+          <p class="popup__eyebrow">CVMakr Agent</p>
+          <h1 class="popup__title">Job Scraper</h1>
+          <p class="popup__tagline">
+            Lock onto any posting, capture the essentials, and fire them to your backend.
+          </p>
+        </div>
+      </header>
+
+      <div class="popup__card">
+        <div class="popup__field">
+          <label class="popup__label" for="language">Language</label>
+          <select id="language" class="popup__select">
+            <option value="fr" selected>Francais (FR)</option>
+            <option value="en">English (EN)</option>
+          </select>
+        </div>
+
+        <p id="status" class="popup__status">Ready to scrape the current tab.</p>
+        <button id="scrapeButton" class="popup__button">Scrape Job</button>
+      </div>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
