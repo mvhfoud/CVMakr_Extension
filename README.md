@@ -2,6 +2,8 @@
 
 This extension completes the CVMakr workflow by automating the repetitive part of sourcing job descriptions and URLs. Instead of copy‑pasting content for every application, you now have a single “Scrape Job” button that collects the page data, lets you pick the language (`fr` by default), and POSTs the payload straight to your local CVMakr backend.
 
+![Screenshot](./assets/Screenshot.png)
+
 ### Features
 - Manifest V3 Chrome extension written in vanilla JS/HTML/CSS
 - Dark “sharky” popup UI with a language toggle
